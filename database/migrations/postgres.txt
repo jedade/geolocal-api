@@ -1,0 +1,14 @@
+postgres://ihzlkdiwytpffs:095176447f789424deac44083fa53246f2053b444d2736a93c552ade27c38983@
+ec2-52-20-66-171.compute-1.amazonaws.com:5432/ddel6j8j423imf
+DB_USERNAME:ihzlkdiwytpffs
+DB_PASSWORD:095176447f789424deac44083fa53246f2053b444d2736a93c552ade27c38983
+DB_HOST:ec2-52-20-66-171.compute-1.amazonaws.com
+DB_PORT:5432
+DB_DATABASE:ddel6j8j423imf
+DB_CONNECTION=pgsql
+
+
+
+//new server
+
+APP_KEY=base64:O82EyRwHLTBLQBoQxzEFuVoACB4c+pEzRy3YvO+zpSs=

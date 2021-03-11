@@ -1,0 +1,1501 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Geolocal",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/arrondissements/": {
+            "get": {
+                "tags": [
+                    "Arrondissements"
+                ],
+                "summary": "les differents arrondissements couvrir par l'api",
+                "description": "Les arrondissements sont liées au commune",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "koda"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/arrondissements": {
+            "post": {
+                "tags": [
+                    "Arrondissements"
+                ],
+                "summary": "liste des problemes",
+                "description": "",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "commune_id"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "bohicon"
+                                    },
+                                    "commune_id": {
+                                        "type": "int",
+                                        "format": "int",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/arrondissements/{id}": {
+            "delete": {
+                "tags": [
+                    "Arrondissements"
+                ],
+                "summary": "Suppression",
+                "description": "suppression d'un arrondissement",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Uniquement par un compte admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Arrondissements"
+                ],
+                "summary": "modificatins",
+                "description": "Pour modifier un attributs des problemes vous devez etre admin",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/categories/": {
+            "get": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "les differents categories couvrir par l'api",
+                "description": "Les arrondissements sont liées au categories",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "koda"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/categories/{id}": {
+            "delete": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Suppression",
+                "description": "suppression d'une categories etre admin ou admin_locaux",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Uniquement par un compte admin ou admin_locaux",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "modificatins",
+                "description": "Pour modifier une categories vous devez etre admin ou admin_locaux",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ou admin_locaux ",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "api/categories/": {
+            "post": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Categories",
+                "description": "Liste des categories de categories et ne peut etre creer que par un admin ou admin_locaux",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "type",
+                                    "commune_id"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Traveaux publics"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "explication"
+                                    },
+                                    "type": {
+                                        "type": "specifique|general",
+                                        "example": "specifique"
+                                    },
+                                    "commune_id": {
+                                        "type": "int",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/comments/": {
+            "get": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "les commentaires",
+                "description": "Listes des commentaires",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "Creation de commentaire",
+                "description": "",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "comment": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "mon commentaire"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "username"
+                                    },
+                                    "problem_id": {
+                                        "type": "string",
+                                        "format": "int",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/comments/{name}": {
+            "get": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "Recherche des commentaires par utilisateur",
+                "description": "Renvoie les commentaires des utilisateur ",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/comments/problemes/{id}": {
+            "get": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "Recherche les commentaire par problemes",
+                "description": "Renvoie les commentaires du problemes voulue juste en renseignant l'id du problemes ",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/comments/{id}": {
+            "delete": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "Suppression",
+                "description": "suppression d'une commune",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Commentaires"
+                ],
+                "summary": "modificatins",
+                "description": "commentaires modifications",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/communes/": {
+            "get": {
+                "tags": [
+                    "Communes"
+                ],
+                "summary": "les communes",
+                "description": "Listes des communes",
+                "operationId": "",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "",
+                                    ""
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "koda"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Communes"
+                ],
+                "summary": "Creation de communes",
+                "description": "",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "bohicon"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/communes/{id}": {
+            "delete": {
+                "tags": [
+                    "Communes"
+                ],
+                "summary": "Suppression",
+                "description": "suppression d'une commune",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Uniquement par un compte admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Communes"
+                ],
+                "summary": "modificatins",
+                "description": "Pour modifier un attributs de communes vous devez etre admin",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes": {
+            "get": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "liste des problemes",
+                "description": "Elle renvoit aussi le nombre total de problemes",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous n'avez pas besoin de vous connecter",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes/commune/{id}": {
+            "get": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "Recherche les problemes d'une commune",
+                "description": "Renvoie les problemes d'une commune",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous n'avez pas besoin de vous connecter",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes/category/{id}": {
+            "get": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "recherche les problemes appartenant a une category",
+                "description": "Renvoie les problemes d'une category",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous n'avez pas besoin de vous connecter",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes/users/{users}": {
+            "get": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "recherche les problemes d'un utilisateur",
+                "description": "Renvoie les problemes propre a un utilisateur",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous n'avez pas besoin de vous connecter",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes/": {
+            "post": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "liste des problemes",
+                "description": "",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous n'avez pas besoin de vous connecter",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "longitude",
+                                    "latitude",
+                                    "image",
+                                    "commune",
+                                    "arrondissement"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "automatique"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "un text"
+                                    },
+                                    "audio": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": ""
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": ""
+                                    },
+                                    "users": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "NameUser"
+                                    },
+                                    "anonymes": {
+                                        "type": "boolean",
+                                        "format": "True|False",
+                                        "example": "True"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": ""
+                                    },
+                                    "longitude": {
+                                        "type": "float",
+                                        "format": "float",
+                                        "example": "15.6"
+                                    },
+                                    "latitude": {
+                                        "type": "float",
+                                        "format": "float",
+                                        "example": "15.6"
+                                    },
+                                    "commune_id": {
+                                        "type": "int",
+                                        "format": "",
+                                        "example": "1"
+                                    },
+                                    "arrondissement_id": {
+                                        "type": "int",
+                                        "format": "",
+                                        "example": "1"
+                                    },
+                                    "category_id": {
+                                        "type": "int",
+                                        "format": "",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/problemes/{id}": {
+            "delete": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "Suppression",
+                "description": "Vous devez vous connectez en admin pour effectuer la suppression ",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Problemes"
+                ],
+                "summary": "modificatins",
+                "description": "Pour modifier un attributs des problemes vous devez etre admin ou admin_locaux",
+                "operationId": "",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ou admin_locaux",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign in",
+                "description": "Login, password",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "66068697"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "persistent": {
+                                        "type": "boolean",
+                                        "example": "true"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign up",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone",
+                                    "password",
+                                    "firstname",
+                                    "lastname",
+                                    "communes",
+                                    "genre",
+                                    "rule"
+                                ],
+                                "properties": {
+                                    "firstname": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Damas"
+                                    },
+                                    "lastname": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "Helas"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "66068697"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "commune_id": {
+                                        "type": "int",
+                                        "format": "int",
+                                        "example": "1"
+                                    },
+                                    "genre": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "M"
+                                    },
+                                    "rule": {
+                                        "type": "string",
+                                        "format": "admin,admin_locaux,users",
+                                        "example": "admin"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "info sur l'utilisateur",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "liste des utilisateurs",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord et etre admin ou admin_locaux",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/{id}": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "info sur un utilisateur seulement un admin et admin_locaux",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Vous devez vous connectez d'abord",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "suprimer un utilisateur",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Vous devez utiliser le token de l'utilisateur ou un admin",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "mise a jour des infos de l'utilisateurs",
+                "description": "",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Vous devez utiliser le token de l'utilisateur ou un admin ou admin_locaux",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone",
+                                    "password",
+                                    "firstname",
+                                    "lastname",
+                                    "communes",
+                                    "genre",
+                                    "rule"
+                                ],
+                                "properties": {
+                                    "firstname": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "Damas"
+                                    },
+                                    "lastname": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "Helas"
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "string",
+                                        "example": "66068697"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    },
+                                    "commune_id": {
+                                        "type": "int",
+                                        "format": "int",
+                                        "example": "1"
+                                    },
+                                    "genre": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "M"
+                                    },
+                                    "rule": {
+                                        "type": "string",
+                                        "format": "admin,admin_locaux,users",
+                                        "example": "admin"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong phone or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
